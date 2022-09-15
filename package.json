@@ -1,12 +1,15 @@
 {
-  "name": "airona-gest",
+  "name": "airona-gest-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://agomez1999.github.io/airona-gest-backend",
   "scripts": {
-    "start": "node dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "node build",
     "dev": "nodemon src",
-    "build": "babel src -d dist"
+    "build": "babel src -d build"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "gh-pages": "^4.0.0",
     "moment": "^2.29.3",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
