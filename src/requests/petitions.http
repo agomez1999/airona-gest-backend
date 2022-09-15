@@ -1,0 +1,92 @@
+@USERS_API = http://localhost:4000/users
+@CLIENTS_API = http://localhost:4000/clients
+
+GET {{USERS_API}}
+
+###
+GET {{USERS_API}}/2
+
+###
+POST {{USERS_API}}
+Content-Type: application/json
+
+{
+    "username": "Nuria",
+    "password": "ngran",
+    "fullname": "Nuria Gran"
+}
+
+###
+DELETE {{USERS_API}}/12
+
+###
+PUT {{USERS_API}}/2
+Content-Type: application/json
+
+{
+    "username": "Alex",
+    "password": "1234",
+    "fullname": "Alex Gomez"
+}
+
+###
+
+POST {{USERS_API}}/search
+Content-Type: application/json
+
+{
+    "fullname": "%A%"
+}
+
+###
+
+POST {{USERS_API}}/login
+Content-Type: application/json
+
+{
+    "username": "Alex",
+    "password": "1234"
+}
+# Clients
+###
+GET {{CLIENTS_API}}
+
+###
+
+GET {{CLIENTS_API}}/2
+
+###
+POST {{CLIENTS_API}}
+Content-Type: application/json
+
+{
+    "name": "Client 2",
+    "email": "client2@gmail.com",
+    "flight_day": "2022-05-31"
+}
+
+###
+DELETE {{CLIENTS_API}}/6
+
+###
+PUT {{CLIENTS_API}}/5
+Content-Type: application/json
+
+{
+    "has_flight": "0"
+}
+
+###
+
+POST {{CLIENTS_API}}/search
+Content-Type: application/json
+
+{
+    "name": "%1%"
+}
+
+###
+GET {{CLIENTS_API}}/filter-state/1
+
+###
+GET http://localhost:4000/flights
